@@ -1,0 +1,48 @@
+<!-- for .sidebar -->
+
+<!--
+ !-- 如果想使用菜单收起功能，请保留此按钮...
+<button type="button" class="btn-icon btn-icon-menu btn-block text-light"></button>
+-->
+
+<ul class="nav flex-column">
+    <li>
+        <a href="index.html"><i class="iconfont">&#xe69c;</i> <span>Dashboard</span></a>
+    </li>
+    <li class="active">
+        <a href="javascript:;"><i class="iconfont">&#xe723;</i> <span>试验管理</span></a>
+        <ul class="nav-collapse">
+            <li class="active"><a href="testing-sygh.html">实验规划</a></li>
+            <li><a href="testing-fzsy.html">仿真实验</a></li>
+            <li><a href="testing-fzrw.html">仿真任务</a></li>
+            <li><a href="testing-fzsj.html">仿真数据</a></li>
+            <li><a href="testing-log.html">日志</a></li>
+        </ul>
+    </li>
+    <li>
+        <a href="#"><i class="iconfont">&#xe721;</i> <span>资源管理</span></a>
+        <ul class="nav-collapse">
+            <li><a href="resources-fwzy.html">服务资源</a></li>
+            <li><a href="resources-rjsj.html">软件与数据</a></li>
+        </ul>
+    </li>
+    <li>
+        <a href="#"><i class="iconfont">&#xe722;</i> <span>流程开发</span></a>
+    </li>
+</ul>
+
+
+<script>
+    $(document).ready(function(){
+        $('.nav > li > a').click(function () {
+            if($(this).parent().find('.nav-collapse').is(":visible"))
+            {
+                return;
+            }
+            $('.nav > li').removeClass('active');
+            $('.nav-collapse').slideUp();
+            $(this).parent().addClass('active');
+            $(this).parent().find('.nav-collapse').slideDown();
+        })
+    });
+</script>
